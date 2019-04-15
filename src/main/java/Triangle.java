@@ -28,10 +28,11 @@ public class Triangle {
     this.c = c;
   }
 
+
   public boolean isValid(){
-    return ((long) this.getA() + (long) this.getB() > this.getC()
-            && (long) this.getA() + (long) this.getC() > this.getB()
-            && (long) this.getB() + (long) this.getC() > this.getA());
+    return ((long) this.a + (long) this.b > this.c
+            && (long) this.a + (long) this.c > this.b
+            && (long) this.b + (long) this.c > this.a);
   }
 
 }

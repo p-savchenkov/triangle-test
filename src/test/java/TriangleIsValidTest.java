@@ -35,21 +35,31 @@ public class TriangleIsValidTest {
                     {0, 0, 0, false},
                     {7, 5, 10, true},
                     {105, 105, 105, true},
+                    {1001, 1001, 21, true},
                     {Integer.MAX_VALUE, 2345, Integer.MAX_VALUE, true}
             }
     );
   }
 
   @Before
-  public void SetupTriangle() {
+  public void setupTriangle() {
     triangle.setA(aSide);
     triangle.setB(bSide);
     triangle.setC(cSide);
   }
 
   @Test
-  public void TriangleIsValidShouldCheckTriangleExistence() {
-    assertEquals(result, triangle.isValid());
+  public void triangleIsValidShouldCheckTriangleExistence() {
+    assertEquals(
+            String.format(
+                    "Некорректный результат валидации существования треугольника со сторонами: %d, %d, %d",
+                    triangle.getA(),
+                    triangle.getB(),
+                    triangle.getC()
+            ),
+            result,
+            triangle.isValid()
+    );
   }
 
 }
